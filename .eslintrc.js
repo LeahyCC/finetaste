@@ -3,7 +3,7 @@ module.exports = {
     browser: true,
     es6: true
   },
-  // extends: ['plugin:react/recommended', 'airbnb'],
+  extends: ['plugin:react/recommended', 'airbnb', 'prettier'],
   globals: {
     Atomics: 'readonly',
     SharedArrayBuffer: 'readonly'
@@ -18,6 +18,7 @@ module.exports = {
   },
   plugins: ['react', '@typescript-eslint', 'prettier'],
   rules: {
+    'react/jsx-one-expression-per-line': 0,
     'prettier/prettier': 'error'
   }
 }
