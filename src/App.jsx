@@ -3,6 +3,7 @@ import logo from './logo.svg'
 import './App.scss'
 
 const App = () => {
+  const x = 'test'
   return (
     <div className='App'>
       <header className='App-header'>
