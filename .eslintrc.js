@@ -17,6 +17,7 @@ module.exports = {
     sourceType: 'module'
   },
   plugins: ['react', '@typescript-eslint', 'prettier'],
+  ignorePatterns: ['*.d.ts', 'node_modules/'],
   rules: {
     'react/jsx-one-expression-per-line': 0,
     'prettier/prettier': 'error'
