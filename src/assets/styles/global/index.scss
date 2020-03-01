@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,400i,500,700&display=swap');
+// Global Reset, keep at top level
+@import './reset.scss';
+@import './colors.scss';
+
+@import './App.scss';
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  font-family: 'Roboto';
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+img {
+  display: block;
+}
+
+a {
+  text-decoration: none;
+}
