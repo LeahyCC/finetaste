@@ -4,8 +4,8 @@ import React, { Component } from 'react'
 import { Link, withRouter, RouteComponentProps } from 'react-router-dom'
 
 import { FaHome } from 'react-icons/fa'
-import { IoIosLeaf } from 'react-icons/io'
-import { GoListUnordered } from 'react-icons/go'
+import { GiCupcake } from 'react-icons/gi'
+import { GoChecklist } from 'react-icons/go'
 
 interface navItemInt {
   to: string
@@ -17,7 +17,7 @@ type navItem = navItemInt[]
 export class Navigation extends Component<RouteComponentProps> {
   navItems = () => {
     const { location } = this.props
-    const iconSize = 40
+    const iconSize = '100%'
     const itemList: navItem = [
       {
         to: '/',
@@ -26,12 +26,12 @@ export class Navigation extends Component<RouteComponentProps> {
       },
       {
         to: '/receipts',
-        icon: <IoIosLeaf size={iconSize} />,
+        icon: <GiCupcake size={iconSize} />,
         title: 'Receipts'
       },
       {
         to: '/shopinglist',
-        icon: <GoListUnordered size={iconSize} />,
+        icon: <GoChecklist size={iconSize} />,
         title: 'Shopping List'
       }
     ]

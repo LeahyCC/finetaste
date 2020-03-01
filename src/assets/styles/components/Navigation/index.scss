@@ -7,6 +7,13 @@
     box-shadow: 0px 0px 2px 1px $eton-green;
     background-color: white;
     padding: 12px 0;
+
+    @include desktop {
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: auto;
+    }
   }
 
   &__item {
@@ -14,24 +21,38 @@
     justify-content: center;
     align-items: center;
 
-    svg {
-      color: $eton-green;
-      transition: color 500ms;
-    }
-
-    &--active {
-      svg {
-        color: $midnight-green;
-      }
+    @include desktop {
+      width: 100%;
+      flex-direction: column;
     }
 
     &:not(:last-child) {
-      margin-right: 6px;
+      margin-right: 24px;
+
+      @include desktop {
+        margin-bottom: 24px;
+        margin-right: auto;
+      }
     }
 
     &-w {
       display: flex;
       justify-content: center;
+
+      @include desktop {
+        flex-direction: column;
+        width: 95px;
+      }
+    }
+
+    svg {
+      width: 40px;
+      color: $eton-green;
+      transition: color 500ms;
+
+      @include desktop {
+        width: 25px;
+      }
     }
 
     &-icon {
@@ -40,6 +61,22 @@
 
     &-title {
       display: none;
+
+      @include desktop {
+        display: block;
+        margin-top: 5px;
+        color: $eton-green;
+        font-weight: 500;
+        transition: color 500ms;
+        font-size: 12px;
+      }
+    }
+
+    &--active {
+      svg,
+      .nav__item-title {
+        color: $midnight-green;
+      }
     }
   }
 }

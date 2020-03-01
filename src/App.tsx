@@ -11,11 +11,13 @@ export default function App() {
     <div className='app__w'>
       <Router>
         <Navigation />
-        <Switch>
-          <Route path='/' component={Dashboard} exact />
-          <Route path='/receipts' component={Receipts} exact />
-          <Route path='/shopinglist' component={ShopingList} exact />
-        </Switch>
+        <div className='app__body'>
+          <Switch>
+            <Route path='/' component={Dashboard} exact />
+            <Route path='/receipts' component={Receipts} exact />
+            <Route path='/shopinglist' component={ShopingList} exact />
+          </Switch>
+        </div>
       </Router>
     </div>
   )
