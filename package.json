@@ -61,7 +61,6 @@
     }
   },
   "lint-staged": {
-    "node_modules": "--ignore",
     "*.scss": "prettier --write",
     "*.{js,jsx,tsx}": [
       "eslint --cache --fix"
