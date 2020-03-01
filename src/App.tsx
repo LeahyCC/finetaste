@@ -8,8 +8,7 @@ import ShopingList from './containers/ShopingList'
 
 export default function App() {
   return (
-    <div>
-      <h1>Fine Taste App</h1>
+    <div className='app__w'>
       <Router>
         <Navigation />
         <Switch>
