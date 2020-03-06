@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Navigation from './components/Navigation'
 import Dashboard from './containers/Dashboard'
 import Receipts from './containers/Receipts'
-import ShopingList from './containers/ShopingList'
+import ShoppingList from './containers/ShoppingList'
 
 export default function App() {
   return (
@@ -15,7 +15,7 @@ export default function App() {
           <Switch>
             <Route path='/' component={Dashboard} exact />
             <Route path='/receipts' component={Receipts} exact />
-            <Route path='/shopinglist' component={ShopingList} exact />
+            <Route path='/shoppingList' component={ShoppingList} exact />
           </Switch>
         </div>
       </Router>
