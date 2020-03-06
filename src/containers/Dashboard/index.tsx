@@ -5,19 +5,20 @@ import { GiPineapple } from 'react-icons/gi'
 import { simpleAction } from '../../redux/actions/simpleAction'
 
 interface AppProps {
-  simpleReducer: any
-  simpleAction(): void
+  simpleActionX(): void
 }
+
 export class DashBoard extends Component<AppProps> {
-  simpleAction = () => {
-    simpleAction()
+  handleSimpleAction = () => {
+    const { simpleActionX } = this.props
+    simpleActionX()
   }
 
   render() {
     return (
       <div>
         DashBoard <GiPineapple size={20} />
-        <button type='button' onClick={this.simpleAction}>
+        <button type='button' onClick={this.handleSimpleAction}>
           Test redux action
         </button>
       </div>
@@ -26,7 +27,7 @@ export class DashBoard extends Component<AppProps> {
 }
 
 const mapDispatchToProps = (dispatch: any) => ({
-  simpleAction: () => dispatch(simpleAction())
+  simpleActionX: () => dispatch(simpleAction())
 })
 
 const mapStateToProps = (state: any) => ({
