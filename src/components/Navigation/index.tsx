@@ -1,6 +1,4 @@
 import React, { Component } from 'react'
-// ‾\_(ツ)_/‾ RouteComponentProps
-// eslint-disable-next-line no-unused-vars
 import { Link, withRouter, RouteComponentProps } from 'react-router-dom'
 
 import { FaHome } from 'react-icons/fa'
@@ -30,7 +28,7 @@ export class Navigation extends Component<RouteComponentProps> {
         title: 'Receipts'
       },
       {
-        to: '/shopinglist',
+        to: '/shoppinglist',
         icon: <GoChecklist size={iconSize} />,
         title: 'Shopping List'
       }
