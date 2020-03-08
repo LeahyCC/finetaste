@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux'
 
-import recipes, { RecipesState } from './recipes'
+import recipes from './recipes'
 
 import recipesObj from '../../objects/recipes'
 
