@@ -1,11 +1,9 @@
 import { combineReducers } from 'redux'
-
+import { recipesState } from '../../objects/recipes'
 import recipes from './recipes'
 
-import recipesObj from '../../objects/recipes'
-
 export interface GlobalState {
-  recipes: recipesObj
+  recipes: recipesState
 }
 
 export default combineReducers<GlobalState>({

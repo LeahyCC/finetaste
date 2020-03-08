@@ -1,37 +1,40 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-
 import { GiPineapple } from 'react-icons/gi'
-import { simpleAction } from '../../redux/actions/simpleAction'
+import getRecipes from '../../redux/actions/recipes'
+import { recipesState } from '../../objects/recipes'
+import DashReceipts from './dashReceipts'
 
-interface AppProps {
-  simpleActionX(): void
+interface DashBoardProps {
+  recipes: recipesState
+  fetchRecipes(): void
 }
 
-export class DashBoard extends Component<AppProps> {
-  handleSimpleAction = () => {
-    const { simpleActionX } = this.props
-    simpleActionX()
+export class DashBoard extends Component<DashBoardProps> {
+  componentDidMount() {
+    const { fetchRecipes } = this.props
+    fetchRecipes()
   }
 
   render() {
+    const { recipes } = this.props
     return (
       <div>
+        <DashReceipts recipes={recipes} />
         DashBoard <GiPineapple size={20} />
-        <button type='button' onClick={this.handleSimpleAction}>
-          Test redux action
-        </button>
       </div>
     )
   }
 }
 
 const mapDispatchToProps = (dispatch: any) => ({
-  simpleActionX: () => dispatch(simpleAction())
+  fetchRecipes: () => dispatch(getRecipes())
 })
 
-const mapStateToProps = (state: any) => ({
-  ...state
-})
+const mapStateToProps = (state: any) => {
+  return {
+    recipes: state.recipes
+  }
+}
 
 export default connect(mapStateToProps, mapDispatchToProps)(DashBoard)
