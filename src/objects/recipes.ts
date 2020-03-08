@@ -18,7 +18,12 @@ type directionType = directionsObj[]
 
 export type cuisineTypes = 'breakfast' | 'lunch' | 'dinner'
 
-export default interface recipesObj {
+export interface recipesState {
+  [key: string]: recipesObj
+}
+
+export interface recipesObj {
+  [key: string]: any
   id: string
   name: string
   cuisine: cuisineTypes
