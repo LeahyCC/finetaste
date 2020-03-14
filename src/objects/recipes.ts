@@ -1,10 +1,12 @@
-interface ingredientsObj {
+export interface ingredientsObj {
+  [key: string]: any
   itemCount: number
   itemName: string
 }
 type ingredientsType = ingredientsObj[]
 
-interface mealTimeObj {
+export interface mealTimeObj {
+  [key: string]: any
   prep: string
   cook: string
   ready: string
@@ -26,6 +28,7 @@ export interface recipesObj {
   [key: string]: any
   id: string
   name: string
+  favorite: boolean
   cuisine: cuisineTypes
   ingredients: ingredientsType
   mealTime: mealTimeObj
