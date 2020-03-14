@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 
 // eslint-disable-next-line react/prefer-stateless-function
-export class Receipts extends Component {
+export class Recipes extends Component {
   render() {
-    return <div>Receipts</div>
+    return <div>Recipes</div>
   }
 }
 
-export default Receipts
+export default Recipes

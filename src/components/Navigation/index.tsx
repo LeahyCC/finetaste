@@ -23,9 +23,9 @@ export class Navigation extends Component<RouteComponentProps> {
         title: 'Dashboard'
       },
       {
-        to: '/receipts',
+        to: '/recipes',
         icon: <GiCupcake size={iconSize} />,
-        title: 'Receipts'
+        title: 'Recipes'
       },
       {
         to: '/shoppinglist',

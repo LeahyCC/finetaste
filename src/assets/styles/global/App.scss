@@ -4,9 +4,12 @@
     height: 100vh;
     max-width: 100%;
     width: 100%;
+    background-color: $light-gray;
   }
 
   &__body {
+    padding: 15px 15px;
+
     @include desktop {
       margin-left: 95px;
     }

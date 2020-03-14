@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
 import Navigation from './components/Navigation'
 import Dashboard from './containers/Dashboard'
-import Receipts from './containers/Receipts'
+import Recipes from './containers/Recipes'
 import ShoppingList from './containers/ShoppingList'
 
 export default function App() {
@@ -14,7 +14,7 @@ export default function App() {
         <div className='app__body'>
           <Switch>
             <Route path='/' component={Dashboard} exact />
-            <Route path='/receipts' component={Receipts} exact />
+            <Route path='/recipes' component={Recipes} exact />
             <Route path='/shoppingList' component={ShoppingList} exact />
           </Switch>
         </div>
