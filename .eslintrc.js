@@ -47,7 +47,9 @@ module.exports = {
     {
       files: ['*.ts', '*.tsx'],
       rules: {
-        '@typescript-eslint/no-unused-vars': [2, { args: 'none' }]
+        '@typescript-eslint/no-unused-vars': [2, { args: 'none' }],
+        'jsx-a11y/click-events-have-key-events': 0,
+        'jsx-a11y/no-static-element-interactions': 0
       }
     }
   ]
