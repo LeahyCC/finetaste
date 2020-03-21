@@ -2,7 +2,6 @@
   &__w {
     padding: 10px;
     border-radius: 6px;
-
     background-color: white;
   }
 
@@ -17,11 +16,19 @@
     }
   }
 
+  &__list-w {
+    max-height: 600px;
+    overflow: auto;
+    padding: 0 5px;
+  }
+
   &__item {
     &-w {
+      width: 100%;
       position: relative;
-      box-shadow: 0px 0px 6px $eton-green;
-      margin: 10px 0;
+      margin: 20px 0;
+      padding: 10px;
+      box-shadow: 0px 0px 6px -1px $eton-green, inset 5px 0px 0px $eton-green;
     }
 
     &-favorite {
@@ -31,6 +38,48 @@
       right: 10px;
       top: 10px;
       color: gold;
+    }
+
+    &-name {
+      font-weight: 500;
+      margin-bottom: 15px;
+    }
+
+    &-details-w {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 12px;
+    }
+
+    &-cuisine,
+    &-ingredient {
+      background-color: $light-gray;
+      padding: 2px 6px;
+      border-radius: 6px;
+    }
+
+    &-prep {
+      &-w {
+        display: flex;
+        align-items: center;
+      }
+    }
+
+    &-bubble {
+      font-weight: 500;
+    }
+  }
+
+  &__prep-item {
+    display: flex;
+    margin-left: 3px;
+    background-color: $light-gray;
+    padding: 2px 6px;
+    border-radius: 6px;
+
+    &-time {
+      font-weight: 500;
     }
   }
 
