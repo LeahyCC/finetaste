@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import SwipeableViews from 'react-swipeable-views'
 import { FaStar } from 'react-icons/fa'
 import { favoriteRecipesFiltered } from '../../helpers/recipes'
+import { capitalCaseFormat } from '../../helpers/index'
 import Button from '../../components/Button'
 import { recipesObj, recipesState, mealTimeObj } from '../../objects/recipes'
 
@@ -17,7 +18,7 @@ interface DashRecipesState {
 class DashRecipes extends Component<DashRecipesProps, DashRecipesState> {
   constructor(props: DashRecipesProps) {
     super(props)
-    this.state = { recipeIndex: 0, recipesListLayout: true }
+    this.state = { recipeIndex: 0, recipesListLayout: false }
   }
 
   handleChangeIndex = (recipeIndex: number) => {
@@ -38,8 +39,10 @@ class DashRecipes extends Component<DashRecipesProps, DashRecipesState> {
       const mealTime: mealTimeObj = mealTimes[key]
       return (
         <div className='das-recipes__prep-item' key={key}>
-          <div className='das-recipes__prep-item-key'>{key}:</div>
-          <div className='das-recipes__prep-item-time'>{mealTime}</div>
+          <div className='das-recipes__prep-item-key'>
+            {capitalCaseFormat(key)}:
+          </div>
+          <div className='das-recipes__prep-item-time'> {mealTime}</div>
         </div>
       )
     })
@@ -48,25 +51,29 @@ class DashRecipes extends Component<DashRecipesProps, DashRecipesState> {
   mapRecipes = () => {
     const { recipes } = this.props
 
-    return favoriteRecipesFiltered(recipes).map((keys, index) => {
+    return favoriteRecipesFiltered(recipes).map((keys) => {
       const recipe: recipesObj = recipes[keys]
+
       return (
         <div className='das-recipes__item-w' key={recipe.id}>
           {recipe.favorite ? (
             <FaStar className='das-recipes__item-favorite' />
           ) : null}
-          <div className='das-recipes__item-name'>
-            {recipe.name} {index}
-          </div>
+          <div className='das-recipes__item-name'>{recipe.name}</div>
           <div className='das-recipes__item-details-w'>
             <div className='das-recipes__item-cuisine'>
-              Cuisine: {recipe.cuisine}
+              Cuisine:{' '}
+              <span className='das-recipes__item-bubble'>
+                {capitalCaseFormat(recipe.cuisine)}
+              </span>
             </div>
             <div className='das-recipes__item-ingredient'>
-              Ingredient Count: {recipe.ingredients?.length}
+              Ingredient Count:{' '}
+              <span className='das-recipes__item-bubble'>
+                {recipe.ingredients?.length}
+              </span>
             </div>
             <div className='das-recipes__item-prep-w'>
-              Meal Prep
               {recipe.mealTime ? this.mealPropTime(recipe.mealTime) : null}
             </div>
           </div>
@@ -128,10 +135,10 @@ class DashRecipes extends Component<DashRecipesProps, DashRecipesState> {
     return (
       <div className='das-recipes__w'>
         <h1 className='das-recipes__heading-w'>
-          <h1 className='das-recipes__heading-text'>Recipes</h1>
+          <h1 className='das-recipes__heading-text'>Favorite Recipes</h1>
           <Button
             type='toggle'
-            text='Toggle Layout'
+            text='Compact'
             activeState={recipesListLayout}
             clickHandler={this.toggleLayout}
           />

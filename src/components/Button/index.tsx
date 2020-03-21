@@ -2,10 +2,11 @@ import React from 'react'
 
 interface ButtonProps {
   type: 'toggle'
-  text: string
+  text?: string
   activeState?: boolean
   clickHandler(): void
 }
+
 function Button(props: ButtonProps) {
   const { type, text, clickHandler, activeState } = props
 
